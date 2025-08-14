@@ -21,16 +21,16 @@ jobs:
           typst-version: "latest"
 
       - name: Compile English Resume
-        run: typst compile Resume/English-Resume.typ Sebastian-Steffensen-Resume-EN.pdf
+        run: typst compile --root . Resume/English-Resume.typ Sebastian-Steffensen-Resume-EN.pdf
 
       - name: Compile Danish Resume
-        run: typst compile Resume/Danish-Resume.typ Sebastian-Steffensen-Resume-DA.pdf
+        run: typst compile --root . Resume/Danish-Resume.typ Sebastian-Steffensen-Resume-DA.pdf
 
       - name: Compile English CV
-        run: typst compile CV/English-CV.typ Sebastian-Steffensen-CV-EN.pdf
+        run: typst compile --root . CV/English-CV.typ Sebastian-Steffensen-CV-EN.pdf
 
       - name: Compile Danish CV
-        run: typst compile CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
+        run: typst compile --root . CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
 
       - name: List generated files
         run: ls -la *.pdf
