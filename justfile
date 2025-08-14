@@ -7,27 +7,27 @@ default:
     @just --list --unsorted
 
 # Compile all CVs and Resumes
-all: resume-en resume-da cv-en cv-da
+all: resume-en resume-da cv-en cv-da organize-pdfs
     @echo "✅ All documents compiled successfully!"
 
 # Compile English Resume
 resume-en:
-    typst compile Resume/English-Resume.typ Sebastian-Steffensen-Resume-EN.pdf
+    typst compile --root . Resume/English-Resume.typ Sebastian-Steffensen-Resume-EN.pdf
     @echo "✅ English Resume compiled"
 
-# Compile Danish Resume  
+# Compile Danish Resume
 resume-da:
-    typst compile Resume/Danish-Resume.typ Sebastian-Steffensen-Resume-DA.pdf
+    typst compile --root . Resume/Danish-Resume.typ Sebastian-Steffensen-Resume-DA.pdf
     @echo "✅ Danish Resume compiled"
 
 # Compile English CV
 cv-en:
-    typst compile CV/English-CV.typ Sebastian-Steffensen-CV-EN.pdf
+    typst compile --root . CV/English-CV.typ Sebastian-Steffensen-CV-EN.pdf
     @echo "✅ English CV compiled"
 
 # Compile Danish CV
 cv-da:
-    typst compile CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
+    typst compile --root . CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
     @echo "✅ Danish CV compiled"
 
 # Watch for changes and recompile (specify which document)
@@ -38,13 +38,14 @@ watch document:
 # Clean all generated PDFs
 clean:
     rm -f *.pdf
+    rm -rf pdf-output
     @echo "🧹 Cleaned all PDF files"
 
 # Quick compile just resumes
 resumes: resume-en resume-da
     @echo "✅ All resumes compiled!"
 
-# Quick compile just CVs  
+# Quick compile just CVs
 cvs: cv-en cv-da
     @echo "✅ All CVs compiled!"
 
@@ -55,4 +56,9 @@ setup:
     # genereate the files for the respective directories "CV-DA.typ, CV-EN.typ, Resume-DA.typ, Resume-EN.typ" with all of them importing the "template.typ" file
     touch Resume/Danish-Resume.typ Resume/English-Resume.typ CV/Danish-CV.typ CV/English-CV.typ
     @echo "📄 Template files created in Resume and CV directories"
-    
+
+# Organize PDFs into output directory
+organize-pdfs:
+    mkdir -p pdf-output
+    -mv *.pdf pdf-output/ 2>/dev/null || true
+    @echo "📁 PDFs organized in pdf-output directory"
