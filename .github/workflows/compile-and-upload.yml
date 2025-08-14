@@ -1,0 +1,47 @@
+name: Compile and Upload Typst CVs
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
+        with:
+          typst-version: "latest"
+
+      - name: Compile English Resume
+        run: typst compile Resume/English-Resume.typ Sebastian-Steffensen-Resume-EN.pdf
+
+      - name: Compile Danish Resume
+        run: typst compile Resume/Danish-Resume.typ Sebastian-Steffensen-Resume-DA.pdf
+
+      - name: Compile English CV
+        run: typst compile CV/English-CV.typ Sebastian-Steffensen-CV-EN.pdf
+
+      - name: Compile Danish CV
+        run: typst compile CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
+
+      - name: List generated files
+        run: ls -la *.pdf
+
+      - name: Upload PDF files to Cloudflare R2
+        uses: ryand56/r2-upload-action@latest
+        with:
+          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
+          r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          r2-bucket: ${{ secrets.R2_BUCKET }}
+          source-dir: .
+          destination-dir: CV&Resume
+          include: "*.pdf"
