@@ -32,8 +32,14 @@ jobs:
       - name: Compile Danish CV
         run: typst compile --root . CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
 
+      - name: Create output directory for PDFs
+        run: mkdir -p pdf-output
+
+      - name: Move PDFs to output directory
+        run: mv *.pdf pdf-output/
+
       - name: List generated files
-        run: ls -la *.pdf
+        run: ls -la pdf-output/
 
       - name: Upload PDF files to Cloudflare R2
         uses: ryand56/r2-upload-action@latest
@@ -42,6 +48,5 @@ jobs:
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: .
+          source-dir: pdf-output
           destination-dir: CV&Resume
-          include: "*.pdf"
