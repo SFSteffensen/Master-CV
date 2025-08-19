@@ -2,7 +2,7 @@
 
 // Personal information
 #let name = "Sebastian F. Steffensen"
-#let location = "Sorø, Zealand, Denmark"
+#let location = "Søborg, Capital Region, Denmark"
 #let email = "Sebastian@sfsteffensen.dev"
 #let github = "github.com/SFSteffensen"
 #let linkedin = "linkedin.com/in/sfsteffensen"
@@ -69,7 +69,7 @@
 
 #certificates(
   name: "Cyber Talent Akedemi",
-  issuer: "Talentfulde Unge Øst", 
+  issuer: "Talentfulde Unge Øst",
   date: "Apr 2023",
   id: "CTA-2023",
   url: "https://cdn.sfsteffensen.dev/CTA-Diploma.pdf",

@@ -4,7 +4,7 @@
 #let lang-config = (
   en: (
     education: "Education",
-    work: "Work Experience", 
+    work: "Work Experience",
     projects: "Projects",
     certificates: "Licenses & Certifications",
     extracurriculars: "Extracurricular Activities",
@@ -13,8 +13,10 @@
     issued-by: "Issued by",
     grade: "Grade Average",
     courses: "Courses",
+    dear: "Dear",
+    sincerely: "Sincerely",
     months: (
-      Jan: "Jan", Feb: "Feb", Mar: "Mar", Apr: "Apr", 
+      Jan: "Jan", Feb: "Feb", Mar: "Mar", Apr: "Apr",
       May: "May", Jun: "Jun", Jul: "Jul", Aug: "Aug",
       Sep: "Sep", Oct: "Oct", Nov: "Nov", Dec: "Dec"
     )
@@ -22,7 +24,7 @@
   da: (
     education: "Uddannelse",
     work: "Erhvervserfaring",
-    projects: "Projekter", 
+    projects: "Projekter",
     certificates: "Licenser & Certificeringer",
     extracurriculars: "Fritidsaktiviteter",
     references: "Referencer",
@@ -30,8 +32,10 @@
     issued-by: "Udstedt af",
     grade: "Gennemsnitlig karakter",
     courses: "Kurser",
+    dear: "Kære",
+    sincerely: "Med venlig hilsen",
     months: (
-      Jan: "Jan", Feb: "Feb", Mar: "Mar", Apr: "Apr", 
+      Jan: "Jan", Feb: "Feb", Mar: "Mar", Apr: "Apr",
       May: "Maj", Jun: "Jun", Jul: "Jul", Aug: "Aug",
       Sep: "Sep", Oct: "Okt", Nov: "Nov", Dec: "Dec"
     )
@@ -174,15 +178,15 @@
   if language == "en" {
     return date-str
   }
-  
+
   let config = lang-config.at(language, default: lang-config.en)
   let translated = date-str
-  
+
   // Replace English month abbreviations with target language
   for (en-month, target-month) in config.months {
     translated = translated.replace(str(en-month), target-month)
   }
-  
+
   translated
 }
 
@@ -219,7 +223,7 @@
   consistent: false,
 ) = {
   let config = lang-config.at(language, default: lang-config.en)
-  
+
   if consistent {
     // edu-consistent style (dates top-right, location bottom-right)
     generic-two-by-two(
@@ -245,7 +249,7 @@
       bottom-right: emph(dates),
     )
   }
-  
+
   // Add honors, courses, and highlights if provided
   if honors.len() > 0 [
     - *#config.grade*: #honors.join(", ")
@@ -279,7 +283,7 @@
     bottom-left: emph(title),
     bottom-right: emph(dates),
   )
-  
+
   if highlights.len() > 0 {
     for highlight in highlights [
       - #highlight
@@ -317,7 +321,7 @@
     },
     right: dates,
   )
-  
+
   if highlights.len() > 0 {
     for highlight in highlights [
       - #highlight
@@ -371,7 +375,7 @@
     left: strong(activity),
     right: dates,
   )
-  
+
   if highlights.len() > 0 {
     for highlight in highlights [
       - #highlight
@@ -386,4 +390,138 @@
   for category in categories [
     - *#category.name*: #category.skills.join(", ")
   ]
+}
+
+// Cover Letter Template
+#let cover-letter(
+  author: "",
+  location: "",
+  email: "",
+  phone: "",
+  personal-site: "",
+  recipient-name: "",
+  recipient-title: "",
+  company: "",
+  company-address: "",
+  date: "",
+  subject: "",
+  greeting: "",
+  closing: "",
+  accent-color: "#000000",
+  link-color: "#0066cc",
+  font: "New Computer Modern",
+  paper: "a4",
+  author-font-size: 16pt,
+  font-size: 11pt,
+  language: "en",
+  body,
+) = {
+  let config = lang-config.at(language, default: lang-config.en)
+
+  // Sets document metadata
+  set document(author: author, title: "Cover Letter - " + author)
+
+  // Document-wide formatting
+  set text(
+    font: font,
+    size: font-size,
+    lang: language,
+    ligatures: false
+  )
+
+  set page(
+    margin: (0.75in),
+    paper: paper,
+  )
+
+  // Link styles
+  show link: underline
+  show link: set text(fill: rgb(link-color))
+
+  // Author header
+  align(left)[
+    #text(
+      size: author-font-size,
+      weight: 700,
+      fill: rgb(accent-color)
+    )[#author]
+
+    #v(0.25em)
+
+    #{
+      let contact-items = ()
+      if location != "" { contact-items.push(location) }
+      if phone != "" { contact-items.push(phone) }
+      if email != "" { contact-items.push(link("mailto:" + email)[#email]) }
+      if personal-site != "" { contact-items.push(link("https://" + personal-site)[#personal-site]) }
+      contact-items.join("  |  ")
+    }
+  ]
+
+  v(1.5em)
+
+  // Date
+  align(right)[
+    #date
+  ]
+
+  v(1em)
+
+  // Recipient information
+  if recipient-name != "" or company != "" [
+    #{
+      if recipient-name != "" and recipient-title != "" [
+        #recipient-name \
+        #recipient-title \
+      ] else if recipient-name != "" [
+        #recipient-name \
+      ]
+
+      if company != "" [
+        #company \
+      ]
+
+      if company-address != "" [
+        #company-address
+      ]
+    }
+
+    #v(1.5em)
+  ]
+
+  // Subject line
+  if subject != "" [
+    *Subject: #subject*
+
+    #v(1em)
+  ]
+
+  // Greeting
+  if greeting != "" [
+    #greeting,
+  ] else if recipient-name != "" [
+    #config.dear #recipient-name,
+  ] else [
+    #config.dear Hiring Manager,
+  ]
+
+  v(1em)
+
+  // Main body with justified text
+  set par(justify: true, leading: 0.65em)
+  body
+
+  v(1.5em)
+
+  // Closing
+  if closing != "" [
+    #closing,
+  ] else [
+    #config.sincerely,
+  ]
+
+  v(2em)
+
+  // Signature line
+  author
 }

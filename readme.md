@@ -13,6 +13,9 @@ A modern, multi-language CV and Resume system built with Typst, inspired by the 
 ├── CV/
 │   ├── English-CV.typ
 │   └── Danish-CV.typ
+├── CoverLetter/
+│   ├── English-CoverLetter.typ
+│   └── Danish-CoverLetter.typ
 └── Generated PDFs in root folder
 ```
 
@@ -40,12 +43,15 @@ just all
 # Compile specific document types
 just resumes        # Both English and Danish resumes
 just cvs           # Both English and Danish CVs
+just cover-letters # Both English and Danish cover letters
 
 # Compile individual documents
 just resume-en     # English Resume
-just resume-da     # Danish Resume  
+just resume-da     # Danish Resume
 just cv-en         # English CV
 just cv-da         # Danish CV
+just cover-letter-en # English Cover Letter
+just cover-letter-da # Danish Cover Letter
 
 # Watch for changes (specify document path)
 just watch Resume/English-Resume.typ
@@ -76,6 +82,7 @@ Based on the original basic-resume template with these additions:
 - **`work()`** - Enhanced with URL support and highlights
 - **`project()`** - Enhanced with affiliation and highlights
 - **`skills()`** - Multi-category skills organization
+- **`cover-letter()`** - Professional cover letter template with recipient information
 
 ### Multi-language Configuration
 
@@ -85,7 +92,7 @@ The template includes a built-in language configuration system:
 #let lang-config = (
   en: (
     education: "Education",
-    work: "Work Experience", 
+    work: "Work Experience",
     // ... more translations
   ),
   da: (
@@ -99,16 +106,26 @@ The template includes a built-in language configuration system:
 ## 📄 Document Types
 
 ### Resume (Short Format)
+
 - Concise, 1-2 page format
 - Essential work experience and education
 - Key projects and skills
 - Ideal for job applications
 
-### CV (Comprehensive Format)  
+### CV (Comprehensive Format)
+
 - Complete career history
 - All projects and experiences
 - Detailed skills and qualifications
 - Academic and detailed professional use
+
+### Cover Letter (Professional Format)
+
+- Personalized business letter format
+- Recipient and company information
+- Professional greeting and closing
+- Customizable for each application
+- **Note**: Cover letters are compiled locally only and are NOT uploaded via GitHub Actions
 
 ## 🎨 Customization
 
@@ -149,12 +166,23 @@ The system is designed to be easily extensible:
 
 ## 📦 Output
 
-Running `just all` generates these PDFs in the root folder:
+Running `just all` generates these PDFs and organizes them:
+
+**PDFs uploaded to Cloudflare R2 (from `pdf-output/` directory):**
 
 - `Sebastian-Steffensen-Resume-EN.pdf`
-- `Sebastian-Steffensen-Resume-DA.pdf` 
+- `Sebastian-Steffensen-Resume-DA.pdf`
 - `Sebastian-Steffensen-CV-EN.pdf`
 - `Sebastian-Steffensen-CV-DA.pdf`
+
+**Cover letters (local compilation only - stay in root directory):**
+
+- `Sebastian-Steffensen-CoverLetter-EN.pdf` (via `just cover-letter-en`)
+- `Sebastian-Steffensen-CoverLetter-DA.pdf` (via `just cover-letter-da`)
+
+### 🚀 GitHub Actions Workflow
+
+The automated workflow only uploads files from the `pdf-output/` directory to Cloudflare R2. Cover letters are intentionally excluded from automated uploads to maintain privacy and allow for customization per application.
 
 ## 🙏 Credits
 

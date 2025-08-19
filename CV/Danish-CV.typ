@@ -2,7 +2,7 @@
 
 // Personal information
 #let name = "Sebastian F. Steffensen"
-#let location = "Sorø, Sjælland, Danmark"
+#let location = "Søborg, Hovedstaden, Danmark"
 #let email = "Sebastian@sfsteffensen.dev"
 #let github = "github.com/SFSteffensen"
 #let linkedin = "linkedin.com/in/sfsteffensen"
@@ -59,7 +59,7 @@
 #work(
   title: "Ungarbejder",
   company: "Multiline",
-  location: "Sorø",
+  location: "Søborg",
   dates: dates-helper(start-date: "Sep 2018", end-date: "Sep 2024", language: "da"),
   url: "https://multiline.dk",
   highlights: (
@@ -80,7 +80,7 @@
 
 #certificates(
   name: "Cyber Talent Akedemi",
-  issuer: "Talentfulde Unge Øst", 
+  issuer: "Talentfulde Unge Øst",
   date: "Apr 2023",
   id: "CTA-2023",
   url: "https://cdn.sfsteffensen.dev/CTA-Diploma.pdf",
@@ -102,7 +102,7 @@
 
 #project(
   name: "DTime",
-  affiliation: "Personligt Projekt", 
+  affiliation: "Personligt Projekt",
   dates: dates-helper(start-date: "Aug 2024", end-date: "Aug 2024", language: "da"),
   url: "github.com/SFSteffensen/DTime",
   highlights: (
