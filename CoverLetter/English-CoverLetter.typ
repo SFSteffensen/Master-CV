@@ -1,26 +1,18 @@
 #import "../template.typ": *
 
-// Personal information - CUSTOMIZE THESE VALUES
-#let name = "Your Full Name"
-#let location = "Your City, Country"
-#let email = "your.email@domain.com"
-#let phone = "+XX XX XX XX XX"
-#let personal-site = "www.yourwebsite.com"
+// Personal information
+#let name = "Sebastian F. Steffensen"
+#let location = "Søborg, Capital Region, Denmark"
+#let email = "Sebastian@sfsteffensen.dev"
+#let phone = "(+45) 27 60 62 96"
+#let personal-site = "www.sfsteffensen.dev"
 
 // Recipient information (customize for each application)
-<<<<<<< HEAD
-#let recipient-name = ""
-#let recipient-title = ""
-#let company = ""
-#let company-address = ""
-#let position = ""
-=======
 #let recipient-name = "Hiring Manager"
 #let recipient-title = "Position Title"
 #let company = "[Company Name]"
 #let company-address = "[Company Address]"
 #let position = "[Position You're Applying For]"
->>>>>>> 19effe0 (refactor: Replace personal cover letter content with generic Lorem templates)
 
 #show: cover-letter.with(
   author: name,
