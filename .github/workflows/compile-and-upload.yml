@@ -20,26 +20,23 @@ jobs:
         with:
           typst-version: "latest"
 
+      - name: Create PDF output directory
+        run: mkdir -p PDF-output
+
       - name: Compile English Resume
-        run: typst compile --root . Resume/English-Resume.typ Sebastian-Steffensen-Resume-EN.pdf
+        run: typst compile --root . Resume/English-Resume.typ PDF-output/Sebastian-Steffensen-Resume-EN.pdf
 
       - name: Compile Danish Resume
-        run: typst compile --root . Resume/Danish-Resume.typ Sebastian-Steffensen-Resume-DA.pdf
+        run: typst compile --root . Resume/Danish-Resume.typ PDF-output/Sebastian-Steffensen-Resume-DA.pdf
 
       - name: Compile English CV
-        run: typst compile --root . CV/English-CV.typ Sebastian-Steffensen-CV-EN.pdf
+        run: typst compile --root . CV/English-CV.typ PDF-output/Sebastian-Steffensen-CV-EN.pdf
 
       - name: Compile Danish CV
-        run: typst compile --root . CV/Danish-CV.typ Sebastian-Steffensen-CV-DA.pdf
-
-      - name: Create output directory for PDFs
-        run: mkdir -p pdf-output
-
-      - name: Move PDFs to output directory
-        run: mv *.pdf pdf-output/
+        run: typst compile --root . CV/Danish-CV.typ PDF-output/Sebastian-Steffensen-CV-DA.pdf
 
       - name: List generated files
-        run: ls -la pdf-output/
+        run: ls -la PDF-output/
 
       - name: Upload PDF files to Cloudflare R2
         uses: ryand56/r2-upload-action@latest
@@ -48,5 +45,5 @@ jobs:
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: pdf-output
+          source-dir: PDF-output
           destination-dir: CV&Resume

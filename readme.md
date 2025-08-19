@@ -7,16 +7,27 @@ A modern, multi-language CV and Resume system built with Typst, inspired by the 
 ```
 ├── template.typ           # Main template with language support
 ├── justfile              # Build automation
-├── Resume/
+├── Resume/                # Personal resume files
 │   ├── English-Resume.typ
 │   └── Danish-Resume.typ
-├── CV/
+├── CV/                    # Personal CV files
 │   ├── English-CV.typ
 │   └── Danish-CV.typ
-├── CoverLetter/
+├── CoverLetter/           # Personal cover letter files
 │   ├── English-CoverLetter.typ
 │   └── Danish-CoverLetter.typ
-└── Generated PDFs in root folder
+├── example/               # Generic example templates
+│   ├── Resume/
+│   │   ├── English-Resume.typ
+│   │   └── Danish-Resume.typ
+│   ├── CV/
+│   │   ├── English-CV.typ
+│   │   └── Danish-CV.typ
+│   └── CoverLetter/
+│       ├── English-CoverLetter.typ
+│       └── Danish-CoverLetter.typ
+├── PDF-output/            # Personal compiled PDFs (for upload)
+└── example-pdf/           # Example compiled PDFs (tracked in git)
 ```
 
 ## 🚀 Quick Start
@@ -52,6 +63,15 @@ just cv-en         # English CV
 just cv-da         # Danish CV
 just cover-letter-en # English Cover Letter
 just cover-letter-da # Danish Cover Letter
+
+# Compile example documents (for showcasing the system)
+just examples           # All example documents
+just example-resume-en  # Example English Resume
+just example-resume-da  # Example Danish Resume
+just example-cv-en      # Example English CV
+just example-cv-da      # Example Danish CV
+just example-cover-letter-en # Example English Cover Letter
+just example-cover-letter-da # Example Danish Cover Letter
 
 # Watch for changes (specify document path)
 just watch Resume/English-Resume.typ
@@ -127,6 +147,65 @@ The template includes a built-in language configuration system:
 - Customizable for each application
 - **Note**: Cover letters are compiled locally only and are NOT uploaded via GitHub Actions
 
+## 📘 Example Templates
+
+The `example/` directory contains clean, generic templates perfect for:
+
+### 🎯 **Getting Started**
+
+- **Fork-friendly templates** with placeholder content
+- **Clear customization points** marked with comments
+- **Professional example content** demonstrating best practices
+- **Multi-language support** (English and Danish)
+
+### 🚀 **Usage Scenarios**
+
+- **New users** can start with example templates and customize them
+- **Demonstrations** of the system's full capabilities
+- **Educational purposes** showing proper CV/Resume structure
+- **Template testing** without personal information
+
+### 📋 **What's Included**
+
+- Complete resume examples (short format)
+- Comprehensive CV examples (detailed format)
+- Cover letter templates with Lorem ipsum content
+- All templates available in both English and Danish
+
+### 🛠️ **Customization Guide**
+
+1. Copy desired templates from `example/` to your personal directories
+2. Replace placeholder information with your details
+3. Customize colors, fonts, and styling in template calls
+4. Compile using regular justfile commands
+
+## 🔄 Personal vs Example Usage
+
+### 📁 **Personal Files** (`Resume/`, `CV/`, `CoverLetter/`)
+
+- **Contains your actual information** (name, experience, contact details)
+- **Used for real applications** and professional purposes
+- **Compiled to `PDF-output/`** with standard commands (`just all`, `just resume-en`, etc.)
+- **Uploaded to cloud** via GitHub Actions (CVs and Resumes only)
+- **Private and customized** for your specific background
+
+### 📘 **Example Files** (`example/`)
+
+- **Generic templates** with placeholder content
+- **Educational and demonstration** purposes
+- **Fork-friendly** with no personal information
+- **Compiled to `example-pdf/`** with example commands (`just examples`, `just example-resume-en`, etc.)
+- **Tracked in git** for easy access and demonstration
+- **Perfect starting point** for new users
+
+### 🎯 **Recommended Workflow**
+
+1. **Start with examples** to understand the system
+2. **Copy example templates** to personal directories
+3. **Customize personal templates** with your information
+4. **Use personal templates** for actual applications
+5. **Keep examples** for reference and system updates
+
 ## 🎨 Customization
 
 ### Personal Information
@@ -168,21 +247,27 @@ The system is designed to be easily extensible:
 
 Running `just all` generates these PDFs and organizes them:
 
-**PDFs uploaded to Cloudflare R2 (from `pdf-output/` directory):**
+**Personal PDFs (compiled to `PDF-output/` directory):**
 
-- `Sebastian-Steffensen-Resume-EN.pdf`
-- `Sebastian-Steffensen-Resume-DA.pdf`
-- `Sebastian-Steffensen-CV-EN.pdf`
-- `Sebastian-Steffensen-CV-DA.pdf`
+- `PDF-output/Sebastian-Steffensen-Resume-EN.pdf`
+- `PDF-output/Sebastian-Steffensen-Resume-DA.pdf`
+- `PDF-output/Sebastian-Steffensen-CV-EN.pdf`
+- `PDF-output/Sebastian-Steffensen-CV-DA.pdf`
+- `PDF-output/Sebastian-Steffensen-CoverLetter-EN.pdf` (via `just cover-letter-en`)
+- `PDF-output/Sebastian-Steffensen-CoverLetter-DA.pdf` (via `just cover-letter-da`)
 
-**Cover letters (local compilation only - stay in root directory):**
+**Example PDFs (compiled to `example-pdf/` directory):**
 
-- `Sebastian-Steffensen-CoverLetter-EN.pdf` (via `just cover-letter-en`)
-- `Sebastian-Steffensen-CoverLetter-DA.pdf` (via `just cover-letter-da`)
+- `example-pdf/Example-Resume-EN.pdf` (via `just example-resume-en`)
+- `example-pdf/Example-Resume-DA.pdf` (via `just example-resume-da`)
+- `example-pdf/Example-CV-EN.pdf` (via `just example-cv-en`)
+- `example-pdf/Example-CV-DA.pdf` (via `just example-cv-da`)
+- `example-pdf/Example-CoverLetter-EN.pdf` (via `just example-cover-letter-en`)
+- `example-pdf/Example-CoverLetter-DA.pdf` (via `just example-cover-letter-da`)
 
 ### 🚀 GitHub Actions Workflow
 
-The automated workflow only uploads files from the `pdf-output/` directory to Cloudflare R2. Cover letters are intentionally excluded from automated uploads to maintain privacy and allow for customization per application.
+The automated workflow compiles and uploads CV and Resume files from the `PDF-output/` directory to Cloudflare R2. Cover letters are intentionally excluded from automated uploads to maintain privacy and allow for customization per application.
 
 ## 🙏 Credits
 

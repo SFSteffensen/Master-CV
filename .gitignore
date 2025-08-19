@@ -1,8 +1,5 @@
-# Compiled PDF outputs
-*.pdf
-
-# PDF output directory for uploads
-pdf-output/
+# Personal PDF output directory (not tracked)
+PDF-output/
 
 # Typst compilation artifacts
 *.typ.tmp
@@ -56,3 +53,7 @@ personal-notes/
 *.zip
 *.tar.gz
 *.rar
+
+# Personal cover letter content (keep templates generic)
+CoverLetter/English-CoverLetter.typ
+CoverLetter/Danish-CoverLetter.typ
