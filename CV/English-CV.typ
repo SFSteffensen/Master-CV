@@ -17,7 +17,7 @@
   linkedin: linkedin,
   phone: phone,
   personal-site: personal-site,
-  accent-color: "#26428b",
+  accent-color: "#1E2650",
   link-color: "#000000",
   font: "Georgia",
   paper: "a4",
