@@ -29,19 +29,6 @@
 #section-header("education", language: "da")
 
 #edu(
-  institution: "Zealand Business College",
-  location: "Slagelse, Sjælland, Danmark",
-  dates: dates-helper(start-date: "Aug 2021", end-date: "Jun 2024", language: "da"),
-  degree: "Højere Teknisk Eksamen i Robotteknologi",
-  honors: ([9.9 / 12.0 Gennemsnitlig karakter],),
-  courses: ([Matematik A], [Teknik A], [Engelsk A], [Dansk A], [Programmering B], [Fysik B], [Kemi B]),
-  highlights: ([*StudieOmrådeProjekt (SOP)*: Neurale netværk: Teori, praksis og optimering | *Matematik A, Programmering B*],),
-  url: "https://www.zbc.dk",
-  language: "da",
-  consistent: true,
-)
-
-#edu(
   institution: "Danmarks Tekniske Universitet",
   location: "Lyngby, Sjælland, Danmark",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027", language: "da"),
