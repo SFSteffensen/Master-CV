@@ -15,10 +15,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Checkout fonts repository
+        uses: actions/checkout@v4
+        with:
+          repository: SFSteffensen/MyFonts
+          token: ${{ secrets.FONTS_REPO_TOKEN }}
+          path: .fonts
+
       - name: Install Typst
         uses: typst-community/setup-typst@v4
         with:
           typst-version: "latest"
+
+      - name: Install custom fonts
+        run: |
+          mkdir -p ~/.local/share/fonts
+          cp .fonts/*.ttf ~/.local/share/fonts/ 2>/dev/null || true
+          cp .fonts/*.otf ~/.local/share/fonts/ 2>/dev/null || true
+          fc-cache -f -v
+          echo "✅ Fonts installed successfully"
 
       - name: Create PDF output directory
         run: mkdir -p PDF-output
