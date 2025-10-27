@@ -33,9 +33,9 @@
   location: "City, Country",
   dates: dates-helper(start-date: "Aug 2020", end-date: "Jun 2024"),
   degree: "Bachelor of Science in Computer Science",
-  honors: ("3.8 / 4.0 Grade Average",),
-  courses: ("Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Web Development"),
-  highlights: ("*Senior Project*: Machine Learning Application for Data Analysis | *Computer Science, Mathematics*",),
+  honors: ([3.8 / 4.0 Grade Average],),
+  courses: ([Data Structures], [Algorithms], [Software Engineering], [Database Systems], [Web Development]),
+  highlights: ([*Senior Project*: Machine Learning Application for Data Analysis | *Computer Science, Mathematics*],),
   url: "https://www.university.edu",
   language: "en",
   consistent: true,
@@ -50,9 +50,9 @@
   dates: dates-helper(start-date: "Jun 2023", end-date: "Aug 2023"),
   url: "https://www.techcompany.com",
   highlights: (
-    "Developed full-stack web applications using React and Node.js, serving over 1,000 daily users.",
-    "Collaborated with senior developers to implement new features and optimize database queries.",
-    "Participated in code reviews and contributed to team documentation and best practices.",
+    [Developed full-stack web applications using React and Node.js, serving over 1,000 daily users.],
+    [Collaborated with senior developers to implement new features and optimize database queries.],
+    [Participated in code reviews and contributed to team documentation and best practices.],
   ),
 )
 
@@ -75,8 +75,8 @@
   dates: dates-helper(start-date: "Jan 2024", end-date: "Feb 2024"),
   url: "github.com/yourusername/portfolio",
   highlights: (
-    "Built responsive portfolio website using modern web technologies and best practices.",
-    "Implemented automated deployment pipeline with continuous integration and testing.",
+    [Built responsive portfolio website using modern web technologies and best practices.],
+    [Implemented automated deployment pipeline with continuous integration and testing.],
   ),
 )
 
@@ -85,8 +85,8 @@
   affiliation: "University Capstone Project",
   dates: dates-helper(start-date: "Sep 2023", end-date: "Dec 2023"),
   highlights: (
-    "Developed cross-platform mobile application using React Native and Firebase.",
-    "Implemented real-time synchronization and offline functionality for seamless user experience.",
+    [Developed cross-platform mobile application using React Native and Firebase.],
+    [Implemented real-time synchronization and offline functionality for seamless user experience.],
   ),
 )
 
@@ -94,10 +94,10 @@
 
 #skills(
   categories: (
-    (name: "Programming", skills: ("Python", "JavaScript", "Java", "C++", "HTML & CSS", "SQL")),
-    (name: "Tools", skills: ("Git", "Docker", "AWS", "Visual Studio Code", "Linux", "CI/CD")),
-    (name: "Frameworks", skills: ("React", "Node.js", "Express", "Django", "React Native")),
-    (name: "Soft Skills", skills: ("Problem Solving", "Team Collaboration", "Communication", "Project Management")),
+    (name: "Programming", skills: ([Python], [JavaScript], [Java], [C++], [HTML & CSS], [SQL])),
+    (name: "Tools", skills: ([Git], [Docker], [AWS], [Visual Studio Code], [Linux], [CI/CD])),
+    (name: "Frameworks", skills: ([React], [Node.js], [Express], [Django], [React Native])),
+    (name: "Soft Skills", skills: ([Problem Solving], [Team Collaboration], [Communication], [Project Management])),
   ),
 )
 

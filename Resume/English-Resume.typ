@@ -33,10 +33,10 @@
   location: "Slagelse, Zealand, Denmark",
   dates: dates-helper(start-date: "Aug 2021", end-date: "Jun 2024"),
   degree: "Higher Technical Examination Programme in Robot Technology",
-  honors: ("9.9 / 12.0 Grade Average",),
-  courses: ("Mathematics A", "Engineering A", "English A", "Danish A", "Programming B", "Physics B", "Chemistry B"),
+  honors: ([9.9 / 12.0 Grade Average],),
+  courses: ([Mathematics A], [Engineering A], [English A], [Danish A], [Programming B], [Physics B], [Chemistry B]),
   highlights: (
-    "The Individual Project (SOP): Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*",
+    [*The Individual Project (SOP)*: Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*],
   ),
   url: "https://www.zbc.dk",
   language: "en",
@@ -48,8 +48,8 @@
   location: "Lyngby, Zealand, Denmark",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027"),
   degree: "Bachelor of Science in Software Technology",
-  courses: ("Discrete Mathematics", "Mathematics 1A", "Introductory Programming"),
-  highlights: (""),
+  courses: ([Discrete Mathematics], [Mathematics 1A], [Introductory Programming]),
+  highlights: (),
   url: "https://www.dtu.dk",
   language: "en",
   consistent: true,
@@ -64,9 +64,9 @@
   dates: dates-helper(start-date: "Jan 2024", end-date: "Jun 2024"),
   url: "https://www.zbc.dk",
   highlights: (
-    "Led the development of a digital solution for ZBC's confectionary department in a three-person team, creating a website for ingredient management and compliance with nutritional standards.",
-    "Designed, built, and managed a PostgreSQL database, including a secure admin panel for controlling ingredient and nutrient data.",
-    "Developed authentication mechanisms to ensure exclusive administrative access, maintaining data integrity and security.",
+    [Led the development of a digital solution for ZBC's confectionary department in a three-person team, creating a website for ingredient management and compliance with nutritional standards.],
+    [Designed, built, and managed a PostgreSQL database, including a secure admin panel for controlling ingredient and nutrient data.],
+    [Developed authentication mechanisms to ensure exclusive administrative access, maintaining data integrity and security.],
   ),
 )
 
@@ -98,8 +98,8 @@
   dates: dates-helper(start-date: "Sep 2023", end-date: "Dec 2023"),
   url: "cdn.sfsteffensen.dev/ConvNetRust.pdf",
   highlights: (
-    "Developed a Rust-based CNN that integrates multiple activation functions and optimization techniques, enhancing model performance and accuracy.",
-    "Performed extensive testing and benchmarking, significantly improving network efficiency and reliability.",
+    [Developed a Rust-based CNN that integrates multiple activation functions and optimization techniques, enhancing model performance and accuracy.],
+    [Performed extensive testing and benchmarking, significantly improving network efficiency and reliability.],
   ),
 )
 
@@ -108,21 +108,22 @@
   affiliation: "Programming Exam",
   dates: dates-helper(start-date: "Jan 2023", end-date: "May 2023"),
   highlights: (
-    "Developed a password manager using Tauri, Rust, Svelte, and Sveltekit, incorporating a BCrypt hash-check system and a customizable password generator with automatic entropy calculation.",
-    "Engineered a robust system for storing and managing user accounts and passwords.",
+    [Developed a password manager using Tauri, Rust, Svelte, and Sveltekit, incorporating a BCrypt hash-check system and a customizable password generator with automatic entropy calculation.],
+    [Engineered a robust system for storing and managing user accounts and passwords.],
   ),
 )
 
 #section-header("skills", language: "en")
 
-#skills(
-  categories: (
-    (name: "Programming", skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX")),
-    (name: "Tools", skills: ("Git", "Docker", "Visual Studio Code", "Various Jetbrains IDEs", "MacOS", "CI/CD")),
-    (name: "Web Development", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
-    (name: "Soft Skills", skills: ("Communication", "Critical Thinking", "Technical Writing")),
+#skills(categories: (
+  (
+    name: "Programming",
+    skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [Typst], [LaTeX]),
   ),
-)
+  (name: "Tools", skills: ([Git], [Docker], [Visual Studio Code], [Various Jetbrains IDEs], [MacOS], [CI/CD])),
+  (name: "Web Development", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
+  (name: "Soft Skills", skills: ([Communication], [Critical Thinking], [Technical Writing])),
+))
 
 *Languages*: Danish (Native speaker), English (Native speaker)
 

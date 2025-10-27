@@ -33,9 +33,9 @@
   location: "By, Danmark",
   dates: dates-helper(start-date: "Aug 2020", end-date: "Jun 2024", language: "da"),
   degree: "Bachelor i Datalogi",
-  honors: ("8.5 / 12.0 Gennemsnitlig karakter",),
-  courses: ("Datastrukturer", "Algoritmer", "Softwareudvikling", "Databasesystemer", "Webudvikling"),
-  highlights: ("*Bachelorprojekt*: Machine Learning applikation til dataanalyse | *Datalogi, Matematik*",),
+  honors: ([8.5 / 12.0 Gennemsnitlig karakter],),
+  courses: ([Datastrukturer], [Algoritmer], [Softwareudvikling], [Databasesystemer], [Webudvikling]),
+  highlights: ([*Bachelorprojekt*: Machine Learning applikation til dataanalyse | *Datalogi, Matematik*],),
   url: "https://www.universitet.dk",
   language: "da",
   consistent: true,
@@ -50,9 +50,9 @@
   dates: dates-helper(start-date: "Jun 2023", end-date: "Aug 2023", language: "da"),
   url: "https://www.techvirksomhed.dk",
   highlights: (
-    "Udviklede full-stack webapplikationer med React og Node.js, der betjente over 1.000 daglige brugere.",
-    "Samarbejdede med senior udviklere om implementering af nye funktioner og optimering af database-forespørgsler.",
-    "Deltog i kodegennemgange og bidrog til teamdokumentation og bedste praksis.",
+    [Udviklede full-stack webapplikationer med React og Node.js, der betjente over 1.000 daglige brugere.],
+    [Samarbejdede med senior udviklere om implementering af nye funktioner og optimering af database-forespørgsler.],
+    [Deltog i kodegennemgange og bidrog til teamdokumentation og bedste praksis.],
   ),
 )
 
@@ -75,8 +75,8 @@
   dates: dates-helper(start-date: "Jan 2024", end-date: "Feb 2024", language: "da"),
   url: "github.com/ditbrugernavn/portfolio",
   highlights: (
-    "Byggede responsiv portfolio hjemmeside ved hjælp af moderne webteknologier og bedste praksis.",
-    "Implementerede automatiseret deployment pipeline med kontinuerlig integration og test.",
+    [Byggede responsiv portfolio hjemmeside ved hjælp af moderne webteknologier og bedste praksis.],
+    [Implementerede automatiseret deployment pipeline med kontinuerlig integration og test.],
   ),
 )
 
@@ -85,8 +85,8 @@
   affiliation: "Universitets Afgangsprojekt",
   dates: dates-helper(start-date: "Sep 2023", end-date: "Dec 2023", language: "da"),
   highlights: (
-    "Udviklede cross-platform mobilapplikation ved hjælp af React Native og Firebase.",
-    "Implementerede real-time synkronisering og offline funktionalitet for sømløs brugeroplevelse.",
+    [Udviklede cross-platform mobilapplikation ved hjælp af React Native og Firebase.],
+    [Implementerede real-time synkronisering og offline funktionalitet for sømløs brugeroplevelse.],
   ),
 )
 
@@ -94,10 +94,10 @@
 
 #skills(
   categories: (
-    (name: "Programmering", skills: ("Python", "JavaScript", "Java", "C++", "HTML & CSS", "SQL")),
-    (name: "Værktøjer", skills: ("Git", "Docker", "AWS", "Visual Studio Code", "Linux", "CI/CD")),
-    (name: "Frameworks", skills: ("React", "Node.js", "Express", "Django", "React Native")),
-    (name: "Soft Skills", skills: ("Problemløsning", "Teamsamarbejde", "Kommunikation", "Projektledelse")),
+    (name: "Programmering", skills: ([Python], [JavaScript], [Java], [C++], [HTML & CSS], [SQL])),
+    (name: "Værktøjer", skills: ([Git], [Docker], [AWS], [Visual Studio Code], [Linux], [CI/CD])),
+    (name: "Frameworks", skills: ([React], [Node.js], [Express], [Django], [React Native])),
+    (name: "Soft Skills", skills: ([Problemløsning], [Teamsamarbejde], [Kommunikation], [Projektledelse])),
   ),
 )
 

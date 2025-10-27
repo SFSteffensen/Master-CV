@@ -33,24 +33,24 @@
   location: "Slagelse, Zealand, Denmark",
   dates: dates-helper(start-date: "Aug 2021", end-date: "Jun 2024"),
   degree: "Higher Technical Examination Programme in Robot Technology",
-  honors: ("9.9 / 12.0 Grade Average",),
+  honors: ([9.9 / 12.0 Grade Average],),
   courses: (
-    "Mathematics A",
-    "Engineering A",
-    "English A",
-    "Danish A",
-    "Programming B",
-    "Physics B",
-    "Chemistry B",
-    "History B",
-    "Technology B",
-    "Biology C",
-    "Communication and IT C",
-    "Social Studies C",
-    "Psychology C",
+    [Mathematics A],
+    [Engineering A],
+    [English A],
+    [Danish A],
+    [Programming B],
+    [Physics B],
+    [Chemistry B],
+    [History B],
+    [Technology B],
+    [Biology C],
+    [Communication and IT C],
+    [Social Studies C],
+    [Psychology C],
   ),
   highlights: (
-    "*The Individual Project (SOP)*: Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*",
+    [*The Individual Project (SOP)*: Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*],
   ),
   url: "https://www.zbc.dk",
   language: "en",
@@ -62,8 +62,8 @@
   location: "Lyngby, Zealand, Denmark",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027"),
   degree: "Bachelor of Science in Software Technology",
-  courses: ("Discrete Mathematics", "Mathematics 1A", "Introductory Programming"),
-  highlights: (""),
+  courses: ([Discrete Mathematics], [Mathematics 1A], [Introductory Programming]),
+  highlights: (),
   url: "https://www.dtu.dk",
   language: "en",
   consistent: true,
@@ -78,9 +78,9 @@
   dates: dates-helper(start-date: "Jan 2024", end-date: "Jun 2024"),
   url: "https://www.zbc.dk",
   highlights: (
-    "Led the development of a digital solution for ZBC's confectionary department in a three-person team, creating a website for ingredient management and compliance with nutritional standards.",
-    "Designed, built, and managed a PostgreSQL database, including a secure admin panel for controlling ingredient and nutrient data.",
-    "Developed authentication mechanisms to ensure exclusive administrative access, maintaining data integrity and security.",
+    [Led the development of a digital solution for ZBC's confectionary department in a three-person team, creating a website for ingredient management and compliance with nutritional standards.],
+    [Designed, built, and managed a PostgreSQL database, including a secure admin panel for controlling ingredient and nutrient data.],
+    [Developed authentication mechanisms to ensure exclusive administrative access, maintaining data integrity and security.],
   ),
 )
 
@@ -91,7 +91,7 @@
   dates: dates-helper(start-date: "Sep 2018", end-date: "Sep 2024"),
   url: "https://multiline.dk",
   highlights: (
-    "I worked as a youth worker at Multiline, specifically in the storage and packaging department. My duties included material sorting and ensuring the proper disposal and recycling of waste.",
+    [I worked as a youth worker at Multiline, specifically in the storage and packaging department. My duties included material sorting and ensuring the proper disposal and recycling of waste.],
   ),
 )
 
@@ -123,8 +123,8 @@
   dates: dates-helper(start-date: "May 2024", end-date: "Jun 2024"),
   url: "www.sfsteffensen.dev",
   highlights: (
-    "Replaced my previous portfolio with a new one written in SolidJS.",
-    "Focused on improving the user experience and enhancing performance with optimized routing and state management.",
+    [Replaced my previous portfolio with a new one written in SolidJS.],
+    [Focused on improving the user experience and enhancing performance with optimized routing and state management.],
   ),
 )
 
@@ -134,10 +134,10 @@
   dates: dates-helper(start-date: "Aug 2024", end-date: "Aug 2024"),
   url: "github.com/SFSteffensen/DTime",
   highlights: (
-    "Developed a simple and efficient application for calculating download time based on internet speed.",
-    "Built with a Rust backend and a SolidJS frontend using Tauri V2.",
-    "Managed a public GitHub repository, implementing CI/CD using GitHub Actions to ensure proper rules, quality assurance, and continuous integration/delivery.",
-    "Gained practical experience in setting up automated workflows for testing and deployment.",
+    [Developed a simple and efficient application for calculating download time based on internet speed.],
+    [Built with a Rust backend and a SolidJS frontend using Tauri V2.],
+    [Managed a public GitHub repository, implementing CI/CD using GitHub Actions to ensure proper rules, quality assurance, and continuous integration/delivery.],
+    [Gained practical experience in setting up automated workflows for testing and deployment.],
   ),
 )
 
@@ -146,8 +146,8 @@
   affiliation: "Programming Exam",
   dates: dates-helper(start-date: "Jan 2023", end-date: "May 2023"),
   highlights: (
-    "Developed a password manager using Tauri, Rust, Svelte, and Sveltekit, incorporating a BCrypt hash-check system and a customizable password generator with automatic entropy calculation.",
-    "Engineered a robust system for storing and managing user accounts and passwords.",
+    [Developed a password manager using Tauri, Rust, Svelte, and Sveltekit, incorporating a BCrypt hash-check system and a customizable password generator with automatic entropy calculation.],
+    [Engineered a robust system for storing and managing user accounts and passwords.],
   ),
 )
 
@@ -157,8 +157,8 @@
   dates: dates-helper(start-date: "Sep 2023", end-date: "Dec 2023"),
   url: "cdn.sfsteffensen.dev/ConvNetRust.pdf",
   highlights: (
-    "Developed a Rust-based CNN that integrates multiple activation functions and optimization techniques, enhancing model performance and accuracy.",
-    "Performed extensive testing and benchmarking, significantly improving network efficiency and reliability.",
+    [Developed a Rust-based CNN that integrates multiple activation functions and optimization techniques, enhancing model performance and accuracy.],
+    [Performed extensive testing and benchmarking, significantly improving network efficiency and reliability.],
   ),
 )
 
@@ -168,14 +168,17 @@
   categories: (
     (
       name: "Soft Skills",
-      skills: ("Communication", "Critical Thinking", "Debating", "Persuasive Writing", "Technical Writing"),
+      skills: ([Communication], [Critical Thinking], [Debating], [Persuasive Writing], [Technical Writing]),
     ),
-    (name: "Programming", skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX")),
+    (
+      name: "Programming",
+      skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [Typst], [LaTeX]),
+    ),
     (
       name: "Tools",
-      skills: ("Microsoft Word", "Docker", "Git", "Visual Studio Code", "Various Jetbrains IDEs", "MacOS", "Unity", "CI/CD"),
+      skills: ([Microsoft Word], [Docker], [Git], [Visual Studio Code], [Various Jetbrains IDEs], [MacOS], [Unity], [CI/CD]),
     ),
-    (name: "Web Development", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
+    (name: "Web Development", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
   ),
 )
 
