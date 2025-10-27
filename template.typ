@@ -1,46 +1,61 @@
 #import "@preview/scienceicons:0.1.0": orcid-icon
 
 // Language configuration for multi-language support
-#let lang-config = (
-  en: (
-    education: "Education",
-    work: "Work Experience",
-    projects: "Projects",
-    certificates: "Licenses & Certifications",
-    extracurriculars: "Extracurricular Activities",
-    references: "References",
-    skills: "Skills",
-    issued-by: "Issued by",
-    grade: "Grade Average",
-    courses: "Courses",
-    dear: "Dear",
-    sincerely: "Sincerely",
-    months: (
-      Jan: "Jan", Feb: "Feb", Mar: "Mar", Apr: "Apr",
-      May: "May", Jun: "Jun", Jul: "Jul", Aug: "Aug",
-      Sep: "Sep", Oct: "Oct", Nov: "Nov", Dec: "Dec"
-    )
+#let lang-config = (en: (
+  education: "Education",
+  work: "Work Experience",
+  projects: "Projects",
+  certificates: "Licenses & Certifications",
+  extracurriculars: "Extracurricular Activities",
+  references: "References",
+  skills: "Skills",
+  issued-by: "Issued by",
+  grade: "Grade Average",
+  courses: "Courses",
+  dear: "Dear",
+  sincerely: "Sincerely",
+  months: (
+    Jan: "Jan",
+    Feb: "Feb",
+    Mar: "Mar",
+    Apr: "Apr",
+    May: "May",
+    Jun: "Jun",
+    Jul: "Jul",
+    Aug: "Aug",
+    Sep: "Sep",
+    Oct: "Oct",
+    Nov: "Nov",
+    Dec: "Dec",
   ),
-  da: (
-    education: "Uddannelse",
-    work: "Erhvervserfaring",
-    projects: "Projekter",
-    certificates: "Licenser & Certificeringer",
-    extracurriculars: "Fritidsaktiviteter",
-    references: "Referencer",
-    skills: "Kompetencer",
-    issued-by: "Udstedt af",
-    grade: "Gennemsnitlig karakter",
-    courses: "Kurser",
-    dear: "Kære",
-    sincerely: "Med venlig hilsen",
-    months: (
-      Jan: "Jan", Feb: "Feb", Mar: "Mar", Apr: "Apr",
-      May: "Maj", Jun: "Jun", Jul: "Jul", Aug: "Aug",
-      Sep: "Sep", Oct: "Okt", Nov: "Nov", Dec: "Dec"
-    )
-  )
-)
+), da: (
+  education: "Uddannelse",
+  work: "Erhvervserfaring",
+  projects: "Projekter",
+  certificates: "Licenser & Certificeringer",
+  extracurriculars: "Fritidsaktiviteter",
+  references: "Referencer",
+  skills: "Kompetencer",
+  issued-by: "Udstedt af",
+  grade: "Gennemsnitlig karakter",
+  courses: "Kurser",
+  dear: "Kære",
+  sincerely: "Med venlig hilsen",
+  months: (
+    Jan: "Jan",
+    Feb: "Feb",
+    Mar: "Mar",
+    Apr: "Apr",
+    May: "Maj",
+    Jun: "Jun",
+    Jul: "Jul",
+    Aug: "Aug",
+    Sep: "Sep",
+    Oct: "Okt",
+    Nov: "Nov",
+    Dec: "Dec",
+  ),
+))
 
 #let resume(
   author: "",
@@ -63,7 +78,6 @@
   language: "en", // Language support
   body,
 ) = {
-
   // Sets document metadata
   set document(author: author, title: author)
 
@@ -73,14 +87,11 @@
     size: font-size,
     lang: language,
     // Disable ligatures so ATS systems do not get confused when parsing fonts.
-    ligatures: false
+    ligatures: false,
   )
 
   // Recommended to have 0.5in margin on all sides
-  set page(
-    margin: (0.5in),
-    paper: paper,
-  )
+  set page(margin: (0.5in), paper: paper)
 
   // Link styles
   show link: underline
@@ -92,21 +103,14 @@
   ]
 
   // Accent Color Styling
-  show heading: set text(
-    fill: rgb(accent-color),
-  )
+  show heading: set text(fill: rgb(accent-color))
 
-  show link: set text(
-    fill: rgb(link-color),
-  )
+  show link: set text(fill: rgb(link-color))
 
   // Name will be aligned left, bold and big
   show heading.where(level: 1): it => [
     #set align(author-position)
-    #set text(
-      weight: 700,
-      size: author-font-size,
-    )
+    #set text(weight: 700, size: author-font-size)
     #pad(it.body)
   ]
 
@@ -127,7 +131,9 @@
   // Personal Info
   pad(
     top: 0.25em,
-    align(personal-info-position)[
+    align(
+      personal-info-position,
+    )[
       #{
         let items = (
           contact-item(pronouns),
@@ -151,12 +157,7 @@
 }
 
 // Generic two by two component for resume
-#let generic-two-by-two(
-  top-left: "",
-  top-right: "",
-  bottom-left: "",
-  bottom-right: "",
-) = {
+#let generic-two-by-two(top-left: "", top-right: "", bottom-left: "", bottom-right: "") = {
   [
     #top-left #h(1fr) #top-right \
     #bottom-left #h(1fr) #bottom-right
@@ -164,10 +165,7 @@
 }
 
 // Generic one by two component for resume
-#let generic-one-by-two(
-  left: "",
-  right: "",
-) = {
+#let generic-one-by-two(left: "", right: "") = {
   [
     #left #h(1fr) #right
   ]
@@ -191,11 +189,7 @@
 }
 
 // Language-aware date helper
-#let dates-helper(
-  start-date: "",
-  end-date: "",
-  language: "en",
-) = {
+#let dates-helper(start-date: "", end-date: "", language: "en") = {
   let start = translate-date(start-date, language: language)
   let end = translate-date(end-date, language: language)
   start + " " + $dash.em$ + " " + end
@@ -205,6 +199,18 @@
 #let section-header(section-key, language: "en") = {
   let config = lang-config.at(language, default: lang-config.en)
   heading(level: 2)[#config.at(section-key)]
+}
+
+// Helper function to join content items with a separator
+#let join-content(items, sep) = {
+  if items.len() == 0 {
+    return none
+  }
+  let result = items.at(0)
+  for item in items.slice(1) {
+    result = [#result#sep#item]
+  }
+  result
 }
 
 // Enhanced education function with honors, courses, and highlights
@@ -226,36 +232,26 @@
 
   if consistent {
     // edu-consistent style (dates top-right, location bottom-right)
-    generic-two-by-two(
-      top-left: if url != "" {
-        strong(link(url)[#institution])
-      } else {
-        strong(institution)
-      },
-      top-right: dates,
-      bottom-left: emph(degree),
-      bottom-right: emph(location),
-    )
+    generic-two-by-two(top-left: if url != "" {
+      strong(link(url)[#institution])
+    } else {
+      strong(institution)
+    }, top-right: dates, bottom-left: emph(degree), bottom-right: emph(location))
   } else {
     // original edu style (location top-right, dates bottom-right)
-    generic-two-by-two(
-      top-left: if url != "" {
-        strong(link(url)[#institution])
-      } else {
-        strong(institution)
-      },
-      top-right: location,
-      bottom-left: emph(degree),
-      bottom-right: emph(dates),
-    )
+    generic-two-by-two(top-left: if url != "" {
+      strong(link(url)[#institution])
+    } else {
+      strong(institution)
+    }, top-right: location, bottom-left: emph(degree), bottom-right: emph(dates))
   }
 
   // Add honors, courses, and highlights if provided
   if honors.len() > 0 [
-    - *#config.grade*: #honors.join(", ")
+    - *#config.grade*: #join-content(honors, ", ")
   ]
   if courses.len() > 0 [
-    - *#config.courses*: #courses.join(", ")
+    - *#config.courses*: #join-content(courses, ", ")
   ]
   if highlights.len() > 0 {
     for highlight in highlights [
@@ -265,24 +261,12 @@
 }
 
 // Enhanced work function with URL and highlights
-#let work(
-  title: "",
-  dates: "",
-  company: "",
-  location: "",
-  url: "",
-  highlights: (),
-) = {
-  generic-two-by-two(
-    top-left: if url != "" {
-      strong(link(url)[#company])
-    } else {
-      strong(company)
-    },
-    top-right: location,
-    bottom-left: emph(title),
-    bottom-right: emph(dates),
-  )
+#let work(title: "", dates: "", company: "", location: "", url: "", highlights: ()) = {
+  generic-two-by-two(top-left: if url != "" {
+    strong(link(url)[#company])
+  } else {
+    strong(company)
+  }, top-right: location, bottom-left: emph(title), bottom-right: emph(dates))
 
   if highlights.len() > 0 {
     for highlight in highlights [
@@ -292,35 +276,25 @@
 }
 
 // Enhanced project function with affiliation and highlights
-#let project(
-  role: "",
-  name: "",
-  url: "",
-  dates: "",
-  affiliation: "",
-  highlights: (),
-) = {
-  generic-one-by-two(
-    left: {
-      if role == "" {
-        if url != "" {
-          [*#link("https://" + url)[#name]*]
-        } else {
-          [*#name*]
-        }
+#let project(role: "", name: "", url: "", dates: "", affiliation: "", highlights: ()) = {
+  generic-one-by-two(left: {
+    if role == "" {
+      if url != "" {
+        [*#link("https://" + url)[#name]*]
       } else {
-        if url != "" {
-          [*#role*, #link("https://" + url)[#name]]
-        } else {
-          [*#role*, #name]
-        }
+        [*#name*]
       }
-      if affiliation != "" [
-        \ #emph(affiliation)
-      ]
-    },
-    right: dates,
-  )
+    } else {
+      if url != "" {
+        [*#role*, #link("https://" + url)[#name]]
+      } else {
+        [*#role*, #name]
+      }
+    }
+    if affiliation != "" [
+      \ #emph(affiliation)
+    ]
+  }, right: dates)
 
   if highlights.len() > 0 {
     for highlight in highlights [
@@ -330,14 +304,7 @@
 }
 
 // Enhanced certificates function with ID field and language support
-#let certificates(
-  name: "",
-  issuer: "",
-  url: "",
-  date: "",
-  id: "",
-  language: "en",
-) = {
+#let certificates(name: "", issuer: "", url: "", date: "", id: "", language: "en") = {
   let config = lang-config.at(language, default: lang-config.en)
   if url != "" [
     *#link(url)[#name]* #if id != "" [#emph[(#id)]] \
@@ -351,11 +318,7 @@
 }
 
 // New references function
-#let references(
-  name: "",
-  reference: "",
-  url: "",
-) = {
+#let references(name: "", reference: "", url: "") = {
   [
     #if url != "" [
       - *#link(url)[#name]*: "#reference"
@@ -366,15 +329,8 @@
 }
 
 // Enhanced extracurriculars function with highlights
-#let extracurriculars(
-  activity: "",
-  dates: "",
-  highlights: (),
-) = {
-  generic-one-by-two(
-    left: strong(activity),
-    right: dates,
-  )
+#let extracurriculars(activity: "", dates: "", highlights: ()) = {
+  generic-one-by-two(left: strong(activity), right: dates)
 
   if highlights.len() > 0 {
     for highlight in highlights [
@@ -384,11 +340,9 @@
 }
 
 // Skills section with multiple categories
-#let skills(
-  categories: (),
-) = {
+#let skills(categories: ()) = {
   for category in categories [
-    - *#category.name*: #category.skills.join(", ")
+    - *#category.name*: #join-content(category.skills, ", ")
   ]
 }
 
@@ -422,17 +376,9 @@
   set document(author: author, title: "Cover Letter - " + author)
 
   // Document-wide formatting
-  set text(
-    font: font,
-    size: font-size,
-    lang: language,
-    ligatures: false
-  )
+  set text(font: font, size: font-size, lang: language, ligatures: false)
 
-  set page(
-    margin: (0.75in),
-    paper: paper,
-  )
+  set page(margin: (0.75in), paper: paper)
 
   // Link styles
   show link: underline
@@ -440,11 +386,7 @@
 
   // Author header
   align(left)[
-    #text(
-      size: author-font-size,
-      weight: 700,
-      fill: rgb(accent-color)
-    )[#author]
+    #text(size: author-font-size, weight: 700, fill: rgb(accent-color))[#author]
 
     #v(0.25em)
 
