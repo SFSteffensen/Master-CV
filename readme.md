@@ -269,6 +269,51 @@ Running `just all` generates these PDFs and organizes them:
 
 The automated workflow compiles and uploads CV and Resume files from the `PDF-output/` directory to Cloudflare R2. Cover letters are intentionally excluded from automated uploads to maintain privacy and allow for customization per application.
 
+## 📝 Content Formatting (v2.0+)
+
+The template now supports **Typst formatting** (like `*bold*`, `_italic_`, etc.) in highlights, honors, courses, and skills!
+
+### Migration Guide
+
+**Old syntax (strings):**
+
+```typst
+highlights: ("This is plain text", "More plain text"),
+courses: ("Math A", "Physics B"),
+skills: ("Rust", "Python", "C#"),
+```
+
+**New syntax (content):**
+
+```typst
+highlights: ([This is *bold* and _italic_], [More *formatted* text]),
+courses: ([Math A], [Physics B]),
+skills: ([Rust], [Python], [C\#]),  // Note: escape # with backslash
+```
+
+### Key Changes
+
+1. **Square brackets `[]` instead of quotes `""`** - This tells Typst to parse the content
+2. **Escape hash symbols** - Use `C\#` instead of `C#` (hash triggers Typst commands)
+3. **Formatting works!** - Use `*bold*`, `_italic_`, `#text(fill: red)[colored]`, etc.
+
+### Example
+
+```typst
+#edu(
+  institution: "University Name",
+  degree: "Bachelor of Science",
+  honors: ([*Summa Cum Laude* - 4.0 GPA],),
+  courses: ([Advanced *Machine Learning*], [_Data Structures_], [C\#/.NET Development]),
+  highlights: (
+    [Led development of *award-winning* project with _15+ team members_],
+    [Published research in *top-tier* conference],
+  ),
+)
+```
+
+All existing documents have been updated to use the new content-based format.
+
 ## 🙏 Credits
 
 - Based on [basic-resume](https://github.com/stuxf/basic-typst-resume-template) by stufx

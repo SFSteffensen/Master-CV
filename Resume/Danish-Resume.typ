@@ -29,25 +29,12 @@
 #section-header("education", language: "da")
 
 #edu(
-  institution: "Zealand Business College",
-  location: "Slagelse, Sjælland, Danmark",
-  dates: dates-helper(start-date: "Aug 2021", end-date: "Jun 2024", language: "da"),
-  degree: "Højere Teknisk Eksamen i Robotteknologi",
-  honors: ("9.9 / 12.0 Gennemsnitlig karakter",),
-  courses: ("Matematik A", "Teknik A", "Engelsk A", "Dansk A", "Programmering B", "Fysik B", "Kemi B"),
-  highlights: ("*StudieOmrådeProjekt (SOP)*: Neurale netværk: Teori, praksis og optimering | *Matematik A, Programmering B*",),
-  url: "https://www.zbc.dk",
-  language: "da",
-  consistent: true,
-)
-
-#edu(
   institution: "Danmarks Tekniske Universitet",
   location: "Lyngby, Sjælland, Danmark",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027", language: "da"),
   degree: "Bachelor i Software Teknologi",
-  courses: ("Diskret Matematik", "Matematik 1A", "Indledende Programmering"),
-  highlights: (""),
+  courses: ([Diskret Matematik], [Matematik 1A], [Indledende Programmering]),
+  highlights: (),
   url: "https://www.dtu.dk",
   language: "da",
   consistent: true,
@@ -62,9 +49,9 @@
   dates: dates-helper(start-date: "Jan 2024", end-date: "Jun 2024", language: "da"),
   url: "https://www.zbc.dk",
   highlights: (
-    "Ledede udviklingen af en digital løsning for ZBC's konditorafdeling i et tre-personers team, skabte en hjemmeside til styring af ingredienser og overholdelse af ernæringsstandarder.",
-    "Designet, bygget og administreret en PostgreSQL-database, inklusiv et sikkert adminpanel til kontrol af ingrediens- og næringsdata.",
-    "Udviklede autentificeringsmekanismer for at sikre eksklusiv administrativ adgang, opretholdelse af dataintegritet og sikkerhed.",
+    [Ledede udviklingen af en digital løsning for ZBC's konditorafdeling i et tre-personers team, skabte en hjemmeside til styring af ingredienser og overholdelse af ernæringsstandarder.],
+    [Designet, bygget og administreret en PostgreSQL-database, inklusiv et sikkert adminpanel til kontrol af ingrediens- og næringsdata.],
+    [Udviklede autentificeringsmekanismer for at sikre eksklusiv administrativ adgang, opretholdelse af dataintegritet og sikkerhed.],
   ),
 )
 
@@ -96,8 +83,8 @@
   dates: dates-helper(start-date: "Sep 2023", end-date: "Dec 2023", language: "da"),
   url: "cdn.sfsteffensen.dev/ConvNetRust.pdf",
   highlights: (
-    "Udviklede en Rust-baseret CNN, der integrerer flere aktiveringsfunktioner og optimeringsteknikker, forbedrer modelpræstation og nøjagtighed.",
-    "Udførte omfattende test og benchmarking, forbedrede netværkseffektivitet og pålidelighed betydeligt.",
+    [Udviklede en Rust-baseret CNN, der integrerer flere aktiveringsfunktioner og optimeringsteknikker, forbedrer modelpræstation og nøjagtighed.],
+    [Udførte omfattende test og benchmarking, forbedrede netværkseffektivitet og pålidelighed betydeligt.],
   ),
 )
 
@@ -106,8 +93,8 @@
   affiliation: "Programmeringseksamen",
   dates: dates-helper(start-date: "Jan 2023", end-date: "May 2023", language: "da"),
   highlights: (
-    "Udviklede en adgangskodehåndtering ved hjælp af Tauri, Rust, Svelte og Sveltekit, inklusivt et BCrypt hash-check-system og en tilpasselig adgangskodegenerator med automatisk entropiberegning.",
-    "Konstruerede et robust system til opbevaring og håndtering af brugerkonti og adgangskoder.",
+    [Udviklede en adgangskodehåndtering ved hjælp af Tauri, Rust, Svelte og Sveltekit, inklusivt et BCrypt hash-check-system og en tilpasselig adgangskodegenerator med automatisk entropiberegning.],
+    [Konstruerede et robust system til opbevaring og håndtering af brugerkonti og adgangskoder.],
   ),
 )
 
@@ -116,14 +103,14 @@
 #skills(categories: (
   (
     name: "Programmering",
-    skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX"),
+    skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [Typst], [LaTeX]),
   ),
   (
     name: "Værktøjer",
-    skills: ("Git", "Docker", "Visual Studio Code", "Forskellige Jetbrains IDE'er", "MacOS", "CI/CD"),
+    skills: ([Git], [Docker], [Visual Studio Code], [Forskellige Jetbrains IDE'er], [MacOS], [CI/CD]),
   ),
-  (name: "Webudvikling", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
-  (name: "Soft Skills", skills: ("Kommunikation", "Kritisk tænkning", "Teknisk skrivning")),
+  (name: "Webudvikling", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
+  (name: "Soft Skills", skills: ([Kommunikation], [Kritisk tænkning], [Teknisk skrivning])),
 ))
 
 *Sprog*: Dansk (Modersmål), Engelsk (Modersmål)
