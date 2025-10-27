@@ -269,31 +269,6 @@ Running `just all` generates these PDFs and organizes them:
 
 The automated workflow compiles and uploads CV and Resume files from the `PDF-output/` directory to Cloudflare R2. Cover letters are intentionally excluded from automated uploads to maintain privacy and allow for customization per application.
 
-### 🔤 Custom Fonts in GitHub Actions
-
-The workflow uses fonts from a private repository to ensure consistent styling in CI builds.
-
-**Setup:**
-
-1. **Private fonts repository**: [SFSteffensen/MyFonts](https://github.com/SFSteffensen/MyFonts) (private)
-   - Contains Georgia and other custom fonts
-   - Keeps font files private and secure
-
-2. **Access token**: A Personal Access Token (PAT) with `repo` scope is stored as `FONTS_REPO_TOKEN` secret
-   - Go to GitHub Settings → Developer settings → Personal access tokens
-   - Generate token with `repo` scope
-   - Add as repository secret in Master-CV
-
-3. **Workflow integration**: The workflow automatically:
-   - Checks out the private fonts repository
-   - Installs fonts to the system font directory
-   - Caches fonts for faster builds
-
-**Local Development:**
-
-- Install fonts on your system normally (e.g., in `/Library/Fonts` on macOS)
-- The workflow handles font installation in CI automatically
-
 ## 📝 Content Formatting (v2.0+)
 
 The template now supports **Typst formatting** (like `*bold*`, `_italic_`, etc.) in highlights, honors, courses, and skills!
