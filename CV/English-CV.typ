@@ -34,9 +34,37 @@
   dates: dates-helper(start-date: "Aug 2021", end-date: "Jun 2024"),
   degree: "Higher Technical Examination Programme in Robot Technology",
   honors: ("9.9 / 12.0 Grade Average",),
-  courses: ("Mathematics A", "Engineering A", "English A", "Danish A", "Programming B", "Physics B", "Chemistry B", "History B", "Technology B", "Biology C", "Communication and IT C", "Social Studies C", "Psychology C"),
-  highlights: ("*The Individual Project (SOP)*: Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*",),
+  courses: (
+    "Mathematics A",
+    "Engineering A",
+    "English A",
+    "Danish A",
+    "Programming B",
+    "Physics B",
+    "Chemistry B",
+    "History B",
+    "Technology B",
+    "Biology C",
+    "Communication and IT C",
+    "Social Studies C",
+    "Psychology C",
+  ),
+  highlights: (
+    "*The Individual Project (SOP)*: Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*",
+  ),
   url: "https://www.zbc.dk",
+  language: "en",
+  consistent: true,
+)
+
+#edu(
+  institution: "Technical University of Denmark",
+  location: "Lyngby, Zealand, Denmark",
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027"),
+  degree: "Bachelor of Science in Software Technology",
+  courses: ("Discrete Mathematics", "Mathematics 1A", "Introductory Programming"),
+  highlights: (""),
+  url: "https://www.dtu.dk",
   language: "en",
   consistent: true,
 )
@@ -138,9 +166,15 @@
 
 #skills(
   categories: (
-    (name: "Soft Skills", skills: ("Communication", "Critical Thinking", "Debating", "Persuasive Writing", "Technical Writing")),
+    (
+      name: "Soft Skills",
+      skills: ("Communication", "Critical Thinking", "Debating", "Persuasive Writing", "Technical Writing"),
+    ),
     (name: "Programming", skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX")),
-    (name: "Tools", skills: ("Microsoft Word", "Docker", "Git", "Visual Studio Code", "Various Jetbrains IDEs", "MacOS", "Unity", "CI/CD")),
+    (
+      name: "Tools",
+      skills: ("Microsoft Word", "Docker", "Git", "Visual Studio Code", "Various Jetbrains IDEs", "MacOS", "Unity", "CI/CD"),
+    ),
     (name: "Web Development", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
   ),
 )

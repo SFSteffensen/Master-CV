@@ -35,8 +35,22 @@
   degree: "Higher Technical Examination Programme in Robot Technology",
   honors: ("9.9 / 12.0 Grade Average",),
   courses: ("Mathematics A", "Engineering A", "English A", "Danish A", "Programming B", "Physics B", "Chemistry B"),
-  highlights: ("*The Individual Project (SOP)*: Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*",),
+  highlights: (
+    "The Individual Project (SOP): Neural Networks: Theory, Practice, and Optimization | *Mathematics A, Programming B*",
+  ),
   url: "https://www.zbc.dk",
+  language: "en",
+  consistent: true,
+)
+
+#edu(
+  institution: "Technical University of Denmark",
+  location: "Lyngby, Zealand, Denmark",
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027"),
+  degree: "Bachelor of Science in Software Technology",
+  courses: ("Discrete Mathematics", "Mathematics 1A", "Introductory Programming"),
+  highlights: (""),
+  url: "https://www.dtu.dk",
   language: "en",
   consistent: true,
 )

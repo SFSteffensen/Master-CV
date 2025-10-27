@@ -41,6 +41,18 @@
   consistent: true,
 )
 
+#edu(
+  institution: "Danmarks Tekniske Universitet",
+  location: "Lyngby, Sjælland, Danmark",
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027", language: "da"),
+  degree: "Bachelor i Software Teknologi",
+  courses: ("Diskret Matematik", "Matematik 1A", "Indledende Programmering"),
+  highlights: (""),
+  url: "https://www.dtu.dk",
+  language: "da",
+  consistent: true,
+)
+
 #section-header("work", language: "da")
 
 #work(
@@ -101,14 +113,18 @@
 
 #section-header("skills", language: "da")
 
-#skills(
-  categories: (
-    (name: "Programmering", skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX")),
-    (name: "Værktøjer", skills: ("Git", "Docker", "Visual Studio Code", "Forskellige Jetbrains IDE'er", "MacOS", "CI/CD")),
-    (name: "Webudvikling", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
-    (name: "Soft Skills", skills: ("Kommunikation", "Kritisk tænkning", "Teknisk skrivning")),
+#skills(categories: (
+  (
+    name: "Programmering",
+    skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX"),
   ),
-)
+  (
+    name: "Værktøjer",
+    skills: ("Git", "Docker", "Visual Studio Code", "Forskellige Jetbrains IDE'er", "MacOS", "CI/CD"),
+  ),
+  (name: "Webudvikling", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
+  (name: "Soft Skills", skills: ("Kommunikation", "Kritisk tænkning", "Teknisk skrivning")),
+))
 
 *Sprog*: Dansk (Modersmål), Engelsk (Modersmål)
 

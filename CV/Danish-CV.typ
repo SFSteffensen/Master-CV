@@ -34,9 +34,35 @@
   dates: dates-helper(start-date: "Aug 2021", end-date: "Jun 2024", language: "da"),
   degree: "Højere Teknisk Eksamen i Robotteknologi",
   honors: ("9.9 / 12.0 Gennemsnitlig karakter",),
-  courses: ("Matematik A", "Teknik A", "Engelsk A", "Dansk A", "Programmering B", "Fysik B", "Kemi B", "Historie B", "Teknologi B", "Biologi C", "Kommunikation og IT C", "Samfundsfag C", "Psykologi C"),
+  courses: (
+    "Matematik A",
+    "Teknik A",
+    "Engelsk A",
+    "Dansk A",
+    "Programmering B",
+    "Fysik B",
+    "Kemi B",
+    "Historie B",
+    "Teknologi B",
+    "Biologi C",
+    "Kommunikation og IT C",
+    "Samfundsfag C",
+    "Psykologi C",
+  ),
   highlights: ("*StudieOmrådeProjekt (SOP)*: Neurale netværk: Teori, praksis og optimering | *Matematik A, Programmering B*",),
   url: "https://www.zbc.dk",
+  language: "da",
+  consistent: true,
+)
+
+#edu(
+  institution: "Danmarks Tekniske Universitet",
+  location: "Lyngby, Sjælland, Danmark",
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027", language: "da"),
+  degree: "Bachelor i Software Teknologi",
+  courses: ("Diskret Matematik", "Matematik 1A", "Indledende Programmering"),
+  highlights: (""),
+  url: "https://www.dtu.dk",
   language: "da",
   consistent: true,
 )
@@ -136,14 +162,22 @@
 
 #section-header("skills", language: "da")
 
-#skills(
-  categories: (
-    (name: "Soft Skills", skills: ("Kommunikation", "Kritisk tænkning", "Debatterende", "Overtalende skrivning", "Teknisk skrivning")),
-    (name: "Programmering", skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX")),
-    (name: "Værktøjer", skills: ("Microsoft Word", "Docker", "Git", "Visual Studio Code", "Forskellige Jetbrains IDE'er", "MacOS", "Unity", "CI/CD")),
-    (name: "Webudvikling", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),
-  ),
-)
+#skills(categories: ((
+  name: "Soft Skills",
+  skills: ("Kommunikation", "Kritisk tænkning", "Debatterende", "Overtalende skrivning", "Teknisk skrivning"),
+), (
+  name: "Programmering",
+  skills: ("Rust", "C#", "Python", "HTML & CSS", "Javascript/Typescript", "Typst", "LaTeX"),
+), (name: "Værktøjer", skills: (
+  "Microsoft Word",
+  "Docker",
+  "Git",
+  "Visual Studio Code",
+  "Forskellige Jetbrains IDE'er",
+  "MacOS",
+  "Unity",
+  "CI/CD",
+)), (name: "Webudvikling", skills: ("Svelte", "Tailwind CSS", "Node & Bun", "NextJS", "SolidJS")),))
 
 *Sprog*: Dansk (Modersmål), Engelsk (Modersmål)
 

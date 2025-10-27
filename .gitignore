@@ -1,5 +1,6 @@
 # Personal PDF output directory (not tracked)
 PDF-output/
+out.pdf
 
 # Typst compilation artifacts
 *.typ.tmp
