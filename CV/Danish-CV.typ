@@ -58,7 +58,7 @@
 #edu(
   institution: "Danmarks Tekniske Universitet",
   location: "Lyngby, Sjælland, Danmark",
-  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027", language: "da"),
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2028", language: "da"),
   degree: "Bachelor i Software Teknologi",
   courses: ([Diskret Matematik], [Matematik 1A], [Indledende Programmering]),
   highlights: (),

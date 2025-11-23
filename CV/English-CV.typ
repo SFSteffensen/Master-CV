@@ -60,7 +60,7 @@
 #edu(
   institution: "Technical University of Denmark",
   location: "Lyngby, Zealand, Denmark",
-  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2027"),
+  dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2028"),
   degree: "Bachelor of Science in Software Technology",
   courses: ([Discrete Mathematics], [Mathematics 1A], [Introductory Programming]),
   highlights: (),
