@@ -110,7 +110,7 @@
     skills: ([Git], [Docker], [Visual Studio Code], [Forskellige Jetbrains IDE'er], [MacOS], [CI/CD]),
   ),
   (name: "Webudvikling", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
-  (name: "Soft Skills", skills: ([Kommunikation], [Kritisk tænkning], [Teknisk skrivning])),
+  (name: "Soft Skills", skills: ([Kommunikation], [Kritisk tænkning], [Teknisk skrivning], [Prompt Engineering])),
 ))
 
 *Sprog*: Dansk (Modersmål), Engelsk (Modersmål)

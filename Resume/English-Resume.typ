@@ -107,7 +107,7 @@
   ),
   (name: "Tools", skills: ([Git], [Docker], [Visual Studio Code], [Various Jetbrains IDEs], [MacOS], [CI/CD])),
   (name: "Web Development", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
-  (name: "Soft Skills", skills: ([Communication], [Critical Thinking], [Technical Writing])),
+  (name: "Soft Skills", skills: ([Communication], [Critical Thinking], [Technical Writing], [Prompt Engineering])),
 ))
 
 *Languages*: Danish (Native speaker), English (Native speaker)
