@@ -168,7 +168,7 @@
   categories: (
     (
       name: "Soft Skills",
-      skills: ([Communication], [Critical Thinking], [Debating], [Persuasive Writing], [Technical Writing]),
+      skills: ([Communication], [Critical Thinking], [Debating], [Persuasive Writing], [Technical Writing], [Prompt Engineering]),
     ),
     (
       name: "Programming",
