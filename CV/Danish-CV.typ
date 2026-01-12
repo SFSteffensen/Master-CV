@@ -164,7 +164,7 @@
 
 #skills(categories: ((
   name: "Soft Skills",
-  skills: ([Kommunikation], [Kritisk tænkning], [Debatterende], [Overtalende skrivning], [Teknisk skrivning]),
+  skills: ([Kommunikation], [Kritisk tænkning], [Debatterende], [Overtalende skrivning], [Teknisk skrivning], [Prompt Engineering]),
 ), (
   name: "Programmering",
   skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [Typst], [LaTeX]),
