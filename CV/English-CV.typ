@@ -72,6 +72,20 @@
 #section-header("work", language: "en")
 
 #work(
+  title: "Surveillance",
+  company: "AGC Biologics A/S",
+  location: "Copenhagen",
+  dates: dates-helper(start-date: "Dec 2025", end-date: "Present"),
+  url: "https://www.agcbio.com",
+  highlights: (
+    [Monitor production equipment, supply facilities, and laboratories outside normal working hours in a GMP-regulated biopharmaceutical environment.],
+    [Serve as the primary point of contact externally during evening, night, and weekend shifts, ensuring compliance with quality and regulatory standards.],
+    [Maintain detailed awareness of critical compliance, quality, and documentation requirements to ensure patient safety and uphold regulatory standards.],
+    [Respond calmly and effectively to unexpected situations while maintaining high standards of accountability and teamwork.],
+  ),
+)
+
+#work(
   title: "Contract Developer",
   company: "Zealand Business College (ZBC)",
   location: "Slagelse",

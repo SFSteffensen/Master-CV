@@ -70,6 +70,20 @@
 #section-header("work", language: "da")
 
 #work(
+  title: "Surveillance",
+  company: "AGC Biologics A/S",
+  location: "København",
+  dates: dates-helper(start-date: "Dec 2025", end-date: "Nuværende", language: "da"),
+  url: "https://www.agcbio.com",
+  highlights: (
+    [Overvåger produktionsudstyr, forsyningsfaciliteter og laboratorier uden for normal arbejdstid i et GMP-reguleret biofarmaceutisk miljø.],
+    [Fungerer som primært kontaktpunkt eksternt under aften-, nat- og weekendvagter, og sikrer overholdelse af kvalitets- og lovgivningsmæssige standarder.],
+    [Opretholder detaljeret bevidsthed om kritiske compliance-, kvalitets- og dokumentationskrav for at sikre patientsikkerhed og opretholde lovgivningsmæssige standarder.],
+    [Reagerer roligt og effektivt på uventede situationer, mens der opretholdes høje standarder for ansvarlighed og teamwork.],
+  ),
+)
+
+#work(
   title: "Kontraktudvikler",
   company: "Zealand Business College (ZBC)",
   location: "Slagelse",
