@@ -33,7 +33,15 @@
   location: "Lyngby, Zealand, Denmark",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2028"),
   degree: "Bachelor of Science in Software Technology",
-  courses: ([Discrete Mathematics], [Mathematics 1A], [Introductory Programming]),
+  courses: (
+    [Discrete Mathematics],
+    [Mathematics 1A],
+    [Introductory Programming],
+    [Mathematics 1B],
+    [Software Engineering 1],
+    [Algorithms and Data Structures],
+    [Physics 1],
+  ),
   highlights: (),
   url: "https://www.dtu.dk",
   language: "en",
@@ -88,7 +96,7 @@
   ),
 )
 
-#project(
+/* #project(
   name: "PassMan - The Password Manager",
   affiliation: "Programming Exam",
   dates: dates-helper(start-date: "Jan 2023", end-date: "May 2023"),
@@ -96,21 +104,45 @@
     [Developed a password manager using Tauri, Rust, Svelte, and Sveltekit, incorporating a BCrypt hash-check system and a customizable password generator with automatic entropy calculation.],
     [Engineered a robust system for storing and managing user accounts and passwords.],
   ),
+) */
+
+#project(
+  name: "Tretten - Hybrid market",
+  affiliation: "Personal Project",
+  dates: dates-helper(start-date: "Jan 2025", end-date: "Apr 2026"),
+  highlights: (
+    [Built a full-stack peer-to-peer rental marketplace using SvelteKit (TypeScript) and Tailwind CSS for the frontend, with a Rust (Axum) REST API backend and PostgreSQL, containerized via Docker Compose with nginx as a reverse proxy.],
+    [Designed and implemented a RESTful API with nested routing, query-based filtering (category, search, price sort), enabling seamless data integration between frontend and backend.],
+    [Implemented Redis for multi-layer caching and as a job queue backend (Apalis), enabling event-driven worker pattern.],
+    [Deployed the full stack as Infrastructure-as-Code using Docker Compose with health-checked services (PostgreSQL, Redis), environment-driven configuration, and S3-compatible file storage (DigitalOcean Spaces) with CDN delivery.],
+  ),
 )
 
 #section-header("skills", language: "en")
 
-#skills(categories: (
-  (
-    name: "Programming",
-    skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [Typst], [LaTeX]),
+#skills(
+  categories: (
+    (
+      name: "Programming",
+      skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [SQL], [SQLite], [Postgres], [Typst], [LaTeX]),
+    ),
+    (name: "Tools", skills: (
+      [Git],
+      [Docker],
+      [Visual Studio Code],
+      [Various Jetbrains IDEs],
+      [MacOS],
+      [CI/CD],
+      [Claude Code],
+      [Redis],
+      [Apalis],
+    )),
+    (name: "Web Development", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
+    (name: "Soft Skills", skills: ([Communication], [Critical Thinking], [Technical Writing], [Prompt Engineering])),
   ),
-  (name: "Tools", skills: ([Git], [Docker], [Visual Studio Code], [Various Jetbrains IDEs], [MacOS], [CI/CD])),
-  (name: "Web Development", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
-  (name: "Soft Skills", skills: ([Communication], [Critical Thinking], [Technical Writing], [Prompt Engineering])),
-))
+)
 
-*Languages*: Danish (Native speaker), English (Native speaker)
+*Languages*: Danish (Native speaker), English (C2 Proficiency)
 
 *Interests*: Programming, Video Games, Reading Non-fiction, Music
 
