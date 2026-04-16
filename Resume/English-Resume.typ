@@ -122,16 +122,26 @@
 
 #skills(
   categories: (
-    (
-      name: "Programming",
-      skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [SQL], [SQLite], [Postgres], [Typst], [LaTeX]),
-    ),
+    (name: "Programming", skills: (
+      [Rust],
+      [C\#],
+      [Java],
+      [Python],
+      [HTML & CSS],
+      [Javascript/Typescript],
+      [SQL],
+      [SQLite],
+      [Postgres],
+      [Typst],
+      [LaTeX],
+    )),
     (name: "Tools", skills: (
       [Git],
       [Docker],
       [Visual Studio Code],
       [Various Jetbrains IDEs],
       [MacOS],
+      [Linux],
       [CI/CD],
       [Claude Code],
       [Redis],

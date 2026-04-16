@@ -62,7 +62,15 @@
   location: "Lyngby, Zealand, Denmark",
   dates: dates-helper(start-date: "Sep 2025", end-date: "Jun 2028"),
   degree: "Bachelor of Science in Software Technology",
-  courses: ([Discrete Mathematics], [Mathematics 1A], [Introductory Programming]),
+  courses: (
+    [Discrete Mathematics],
+    [Mathematics 1A],
+    [Introductory Programming],
+    [Mathematics 1B],
+    [Software Engineering 1],
+    [Algorithms and Data Structures],
+    [Physics 1],
+  ),
   highlights: (),
   url: "https://www.dtu.dk",
   language: "en",
@@ -132,6 +140,31 @@
 #section-header("projects", language: "en")
 
 #project(
+  name: "SimpleSnake & AdvancedSnake",
+  affiliation: "DTU 02104 Exam Project",
+  dates: dates-helper(start-date: "Jan 2026", end-date: "Jan 2026"),
+  highlights: (
+    [Developed a Java 21 / JavaFX Snake game in a team of four using a shared multi-module Gradle architecture, with a reusable MVC core library consumed by both the basic and advanced application variants.],
+    [Designed and implemented a plugin system via a GamePlugin interface with full lifecycle hooks (move veto, onDotEaten, onGameOver, dispose), enabling the advanced version to be composed entirely from independently configurable, toggleable plugins.],
+    [Authored high-score persistence using SQLite via JDBC, including schema initialization, parameterized queries, and top-N leaderboard logic with platform-specific data directory management.],
+    [Wrote JUnit 5 unit and integration tests across model, controller, and persistence layers, using \@TempDir for isolated database testing and mock plugin strategies for controller verification.],
+    [Maintained code quality with PMD static analysis and Google Java Format (Spotless), with CI/CD via GitHub Actions.],
+  ),
+)
+
+#project(
+  name: "Tretten - Hybrid market",
+  affiliation: "Personal Project",
+  dates: dates-helper(start-date: "Jan 2025", end-date: "Apr 2026"),
+  highlights: (
+    [Built a full-stack peer-to-peer rental marketplace using SvelteKit (TypeScript) and Tailwind CSS for the frontend, with a Rust (Axum) REST API backend and PostgreSQL, containerized via Docker Compose with nginx as a reverse proxy.],
+    [Designed and implemented a RESTful API with nested routing, query-based filtering (category, search, price sort), enabling seamless data integration between frontend and backend.],
+    [Implemented Redis for multi-layer caching and as a job queue backend (Apalis), enabling event-driven worker pattern.],
+    [Deployed the full stack as Infrastructure-as-Code using Docker Compose with health-checked services (PostgreSQL, Redis), environment-driven configuration, and S3-compatible file storage (DigitalOcean Spaces) with CDN delivery.],
+  ),
+)
+
+#project(
   name: "SolidJS Portfolio",
   affiliation: "Personal Project",
   dates: dates-helper(start-date: "May 2024", end-date: "Jun 2024"),
@@ -180,18 +213,32 @@
 
 #skills(
   categories: (
-    (
-      name: "Soft Skills",
-      skills: ([Communication], [Critical Thinking], [Debating], [Persuasive Writing], [Technical Writing], [Prompt Engineering]),
-    ),
-    (
-      name: "Programming",
-      skills: ([Rust], [C\#], [Python], [HTML & CSS], [Javascript/Typescript], [Typst], [LaTeX]),
-    ),
-    (
-      name: "Tools",
-      skills: ([Microsoft Word], [Docker], [Git], [Visual Studio Code], [Various Jetbrains IDEs], [MacOS], [Unity], [CI/CD]),
-    ),
+    (name: "Soft Skills", skills: ([Communication], [Critical Thinking], [Technical Writing], [Prompt Engineering])),
+    (name: "Programming", skills: (
+      [Rust],
+      [C\#],
+      [Java],
+      [Python],
+      [HTML & CSS],
+      [Javascript/Typescript],
+      [SQL],
+      [SQLite],
+      [Postgres],
+      [Typst],
+      [LaTeX],
+    )),
+    (name: "Tools", skills: (
+      [Git],
+      [Docker],
+      [Visual Studio Code],
+      [Various Jetbrains IDEs],
+      [MacOS],
+      [Linux],
+      [CI/CD],
+      [Claude Code],
+      [Redis],
+      [Apalis],
+    )),
     (name: "Web Development", skills: ([Svelte], [Tailwind CSS], [Node & Bun], [NextJS], [SolidJS])),
   ),
 )
